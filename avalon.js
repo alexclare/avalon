@@ -69,9 +69,9 @@ function generate() {
         goods = [],
         evils = [];
 
-    var i;
-    for (i = 0; i < specials.length; (i++)) {
-        var spec = specials[i];
+    var i, spec;
+    for (i = 0; i < specials.length; i += 1) {
+        spec = specials[i];
         if (sides[spec] === 'good') {
             goods.push(spec);
         } else {
@@ -100,7 +100,7 @@ function generate() {
 
 
 // TODO deactivate when game is in "generated" state
-$('#name-input').keypress(function(ev) {
+$('#name-input').keypress(function (ev) {
     if (ev.which === 13 && $(this).val().length > 0) {
         var name = $(this).val();
         // TODO padding between buttons
