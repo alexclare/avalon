@@ -97,3 +97,13 @@ function generate() {
 
     console.log(assignments);
 }
+
+
+$('#name-input').keypress(function(ev) {
+    if (ev.which === 13 && $(this).val().length > 0) {
+        var name = $(this).val();
+        // TODO padding between buttons
+        $('#players').append('<br><button type="button" class="btn btn-default player" disabled>' + name + "</button>");
+        $(this).val('');
+    }
+});
