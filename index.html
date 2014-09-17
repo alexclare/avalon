@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>avalon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>avalon</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="enter name and press return" id="name-input">
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" id="generate">Generate</button>
+        </div>
+        <div class="col-md-7"><h4>Instructions</h4></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Special Characters</h5>
+          <form role="form">
+            <div class="checkbox">
+              <label><input type="checkbox" checked>Merlin</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox">Percival</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox">Morgana</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox">Oberon</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox">Mordred</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-2" id="players">
+        </div>
+
+        <div class="col-md-7">
+          <ol>
+            <li>Enter names and click "Generate"</li>
+            <li>Each person clicks their name to see their role and information. Nobody look!</li>
+            <li>At the end of the game, hit "Reveal All" to see all of the roles</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="MersenneTwister.utf-8.js"></script>
+
+    <script src="avalon.js"></script>
+  </body>
+</html>
