@@ -9,15 +9,15 @@ var rand = (function () {
     };
 }());
 
-function shuffle(arr) {
+Array.prototype.shuffle = function () {
     var i, ind, temp;
-    for (i = arr.length - 1; i > 0; i -= 1) {
+    for (i = this.length - 1; i > 0; i -= 1) {
         ind = Math.floor(rand() * (i + 1));
-        temp = arr[i];
-        arr[i] = arr[ind];
-        arr[ind] = temp;
+        temp = this[i];
+        this[i] = this[ind];
+        this[ind] = temp;
     }
-    return arr; // shuffle in place, not necessary
+    return this;
 }
 
 
@@ -80,15 +80,15 @@ function generate() {
     }
 
     while (goods.length < gameSize[0]) {
-        goods.push("good");
+        goods.push('good');
     }
     while (evils.length < gameSize[1]) {
-        evils.push("evil");
+        evils.push('evil');
     }
 
     // shuffle and assign
     var characters = [].concat(goods, evils);
-    shuffle(characters);
+    characters.shuffle();
 
     var assignments = { };
     for (i = 0; i < names.length; i += 1) {
