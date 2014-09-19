@@ -54,21 +54,30 @@ var sides = {
 };
 
 
-function generate() {
-    // input from the web form
-    var names = $('.player').map(function (idx, el) {
+// grab info from the web page ************************
+
+function getPlayers() {
+    return $('.player').map(function (idx, el) {
         return $(this).text();
     }).toArray();
+}
 
-    var specials = $(':checked').parent().map(function (idx, el) {
+function getSpecials() {
+    return $(':checked').parent().map(function (idx, el) {
         return $(this).text().toLowerCase();
     }).toArray();
+}
+
+function generate() {
+    var players = getPlayers();
+    var specials = getSpecials();
 
     // fill in sides appropriately
-    var gameSize = gameSizes[names.length],
+    var gameSize = gameSizes[players.length],
         goods = [],
         evils = [];
 
+    // TODO distinguish the assassin?
     var i, spec;
     for (i = 0; i < specials.length; i += 1) {
         spec = specials[i];
@@ -91,11 +100,12 @@ function generate() {
     characters.shuffle();
 
     var assignments = { };
-    for (i = 0; i < names.length; i += 1) {
-        assignments[names[i]] = characters[i];
+    for (i = 0; i < players.length; i += 1) {
+        assignments[players[i]] = characters[i];
     }
 
     console.log(assignments);
+    return assignments;
 }
 
 
