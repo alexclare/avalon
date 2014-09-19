@@ -47,7 +47,7 @@ var sides = {
     'good': 'good',
     'evil': 'evil',
     'merlin': 'good',
-    'pervical': 'good',
+    'percival': 'good',
     'morgana': 'evil',
     'oberon': 'evil',
     'mordred': 'evil'
