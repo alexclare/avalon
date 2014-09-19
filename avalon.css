@@ -1,0 +1,7 @@
+button.player {
+    margin-bottom: 0.4em;
+}
+
+label.disabled {
+    color: #999;
+}

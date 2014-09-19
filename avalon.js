@@ -18,7 +18,7 @@ Array.prototype.shuffle = function () {
         this[ind] = temp;
     }
     return this;
-}
+};
 
 
 // game properties **************************************

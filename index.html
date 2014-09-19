@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="avalon.css">
   </head>
   <body>
     <div class="container">
@@ -30,6 +31,7 @@
             <div class="checkbox">
               <label><input type="checkbox" checked>Merlin</label>
             </div>
+            <!-- TODO perhaps disable Percival if no Merlin/Morgana -->
             <div class="checkbox">
               <label><input type="checkbox">Percival</label>
             </div>
@@ -41,6 +43,9 @@
             </div>
             <div class="checkbox">
               <label><input type="checkbox">Mordred</label>
+            </div><br>
+            <div class="checkbox">
+              <label class="disabled"><input type="checkbox" disabled>Randomize</label>
             </div>
           </form>
         </div>
@@ -55,7 +60,7 @@
           <br><button type="button" class="btn btn-default player" disabled>Gerald</button>
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-7" id="descriptions">
           <ol>
             <li>Enter names and click "Generate"</li>
             <li>Each person clicks their name to see their role and information. Nobody look!</li>
