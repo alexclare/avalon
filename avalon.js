@@ -11,10 +11,10 @@ var rand = (function () {
 
 Array.prototype.shuffle = function () {
     var i, ind, temp;
-    for (i = this.length - 1; i > 0; i -= 1) {
-        ind = Math.floor(rand() * (i + 1));
-        temp = this[i];
-        this[i] = this[ind];
+    for (i = this.length; i > 1; i -= 1) {
+        ind = Math.floor(rand() * i);
+        temp = this[i-1];
+        this[i-1] = this[ind];
         this[ind] = temp;
     }
     return this;
