@@ -32,7 +32,7 @@ var gameSizes = {
     10: [6, 4]
 };
 
-// TODOSOMEDAY combine these two
+// TODOSOMEDAY combine these three
 var descriptions = {
     'good': 'You are GOOD.',
     'evil': 'You are EVIL.<br><br>You see:<br>',
@@ -53,6 +53,15 @@ var sides = {
     'mordred': 'evil'
 };
 
+var canSee = {
+    'good': [],
+    'evil': ['evil', 'morgana', 'mordred'],
+    'merlin': ['evil', 'morgana', 'oberon', 'mordred'],
+    'percival': ['merlin'],
+    'morgana': ['evil', 'morgana', 'mordred'],
+    'oberon': [],
+    'mordred': ['evil', 'morgana', 'mordred']
+}
 
 // grab info from the web page ************************
 
@@ -68,16 +77,12 @@ function getSpecials() {
     }).toArray();
 }
 
-function generate() {
-    var players = getPlayers();
-    var specials = getSpecials();
-
+function generate(players, specials) {
     // fill in sides appropriately
     var gameSize = gameSizes[players.length],
         goods = [],
         evils = [];
 
-    // TODO distinguish the assassin?
     var i, spec;
     for (i = 0; i < specials.length; i += 1) {
         spec = specials[i];
