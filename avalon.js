@@ -108,8 +108,7 @@ function generate(players, specials) {
 $('#name-input').keypress(function (ev) {
     if (ev.which === 13 && $(this).val().length > 0) {
         var name = $(this).val();
-        // TODO padding between buttons
-        $('#players').append('<br><button type="button" class="btn btn-default player" disabled>' + name + '</button>');
+        $('#players').append('<button type="button" class="btn btn-default btn-block player" disabled>' + name + '</button>');
         $(this).val('');
     }
 });
