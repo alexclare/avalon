@@ -56,12 +56,13 @@ var sides = {
 var canSee = {
     'good': [],
     'evil': ['evil', 'morgana', 'mordred'],
-    'merlin': ['evil', 'morgana', 'oberon', 'mordred'],
-    'percival': ['merlin'],
+    'merlin': ['evil', 'morgana', 'oberon'],
+    'percival': ['merlin', 'morgana'],
     'morgana': ['evil', 'morgana', 'mordred'],
     'oberon': [],
     'mordred': ['evil', 'morgana', 'mordred']
 }
+
 
 // grab info from the web page ************************
 
