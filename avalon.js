@@ -32,17 +32,6 @@ var gameSizes = {
     10: [6, 4]
 };
 
-// TODOSOMEDAY combine these three
-var descriptions = {
-    'good': 'You are GOOD.',
-    'evil': 'You are EVIL.<br><br>You see:<br>',
-    'merlin': 'You are MERLIN (GOOD).<br><br>You see:<br>',
-    'pervical': 'You are PERCIVAL (GOOD).<br><br>You see:<br>',
-    'morgana': 'You are MORGANA (EVIL).<br><br>You see:<br>',
-    'oberon': 'You are OBERON (EVIL).',
-    'mordred': 'You are MORDRED (EVIL).<br><br>You see:<br>'
-};
-
 var sides = {
     'good': 'good',
     'evil': 'evil',
