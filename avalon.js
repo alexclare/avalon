@@ -113,3 +113,27 @@ $('#name-input').keypress(function (ev) {
         $(this).val('');
     }
 });
+
+function description(player, assignments) {
+    var assignment = assignments[player],
+        sees = canSee[assignment];
+
+    var result = '<ul><li>You are ';
+    result += assignment.toUpperCase();
+    if (!(assignment === 'good' || assignment === 'evil')) {
+        result += ' (' + sides[assignment].toUpperCase() + ')';
+    }
+    result += '.</li>';
+
+    if (sees.length > 0) {
+        result += '<li>&nbsp</li><li>You see:</li><ul>';
+        for (other in assignments) {
+            if (sees.indexOf(assignments[other]) > -1 && player !== other) {
+                result += '<li>' + other + '</li>';
+            }
+        }
+        result += '</ul>';
+    }
+    result += '</ul>';
+    return result;
+}

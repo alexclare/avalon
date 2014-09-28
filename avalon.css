@@ -5,3 +5,7 @@ button.player {
 label.disabled {
     color: #999;
 }
+
+ul {
+    list-style-type: none;
+}
