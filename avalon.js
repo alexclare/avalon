@@ -104,12 +104,21 @@ function generate(players, specials) {
 }
 
 
-// TODO deactivate when game is in "generated" state
+function disableInput() {
+    $('#name-input').attr({
+        placeholder: '',
+        disabled: true
+    });
+}
+
 $('#name-input').keypress(function (ev) {
     if (ev.which === 13 && $(this).val().length > 0) {
         var name = $(this).val();
         $('#players').append('<button type="button" class="btn btn-default btn-block player" disabled>' + name + '</button>');
         $(this).val('');
+        if ($('.player').length >= 10) {
+            disableInput();
+        }
     }
 });
 
