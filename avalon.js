@@ -119,6 +119,9 @@ $('#name-input').keypress(function (ev) {
         if ($('.player').length >= 10) {
             disableInput();
         }
+        if ($('.player').length >= 5) {
+            $('#generate').attr('disabled', false);
+        }
     }
 });
 
