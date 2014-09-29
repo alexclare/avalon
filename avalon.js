@@ -127,7 +127,14 @@ $('#name-input').keypress(function (ev) {
 
 function description(player, assignments) {
     var assignment = assignments[player],
-        sees = canSee[assignment];
+        sees = canSee[assignment],
+        others = [];
+
+    for (other in assignments) {
+        if (sees.indexOf(assignments[other]) > -1 && player !== other) {
+            others.push(other);
+        }
+    }
 
     var result = '<ul><li>You are ';
     result += assignment.toUpperCase();
@@ -136,15 +143,14 @@ function description(player, assignments) {
     }
     result += '.</li>';
 
-    if (sees.length > 0) {
+    if (others.length > 0) {
         result += '<li>&nbsp</li><li>You see:</li><ul>';
-        for (other in assignments) {
-            if (sees.indexOf(assignments[other]) > -1 && player !== other) {
-                result += '<li>' + other + '</li>';
-            }
-        }
+        others.forEach(function (val, idx, arr) {
+            result += '<li>' + val + '</li>';
+        });
         result += '</ul>';
     }
+
     result += '</ul>';
     return result;
 }
